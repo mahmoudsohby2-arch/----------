@@ -1,0 +1,29 @@
+/* 1. تعديل شاشة البداية لتكون مالئة للشاشة */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0a192f; /* خلفية داكنة تناسب التصميم */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+.intro-shoe {
+    width: 80vw; /* تجعل الصورة تأخذ 80% من عرض الشاشة */
+    max-width: 600px;
+    height: auto;
+    /* تأثير "نصف لفة" أو ميلان معين */
+    transform: rotate(-15deg); 
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+    animation: introEffect 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes introEffect {
+    0% { transform: rotate(-15deg) scale(0.8); opacity: 0; }
+    100% { transform: rotate(-15deg) scale(1); opacity: 1; }
+}
